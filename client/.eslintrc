@@ -1,0 +1,121 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/react",
+    "plugin:prettier/recommended",
+    "plugin:compat/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:react-hooks/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "arrow-parens": [
+      "error",
+      "always"
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".tsx"
+        ]
+      }
+    ],
+    "global-require": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "no-nested-ternary": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "assert": "either"
+      }
+    ],
+    "jsx-a11y/label-has-for": "off", // deprecated
+    "jsx-a11y/anchor-is-valid": "off", // not accurate since we use as="button"
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "components",
+            "./src/components"
+          ],
+          [
+            "hooks",
+            "./src/hooks"
+          ],
+          [
+            "pages",
+            "./src/pages"
+          ],
+          [
+            "services",
+            "./src/services"
+          ],
+          [
+            "types",
+            "./src/types"
+          ],
+        ],
+        "extensions": [
+          ".js",
+          ".json",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    },
+    "polyfills": [
+      "fetch",
+      "Array.from",
+      "Promise",
+      "IntersectionObserver",
+      "Number.isNaN"
+    ]
+  }
+}
